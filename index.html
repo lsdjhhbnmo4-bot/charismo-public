@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charismo AI - Master the Art of the Approach with AI-Powered Practice</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --dark-bg: #1a1a1a;
+            --darker-bg: #0d1117;
+            --card-bg: rgba(33, 38, 45, 0.7);
+            --accent-color: #58a6ff;
+            --text-light: #f0f6fc;
+            --text-muted: #8b949e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(13, 17, 23, 0.8), rgba(13, 17, 23, 0.7)), url('https://t4.ftcdn.net/jpg/04/24/71/29/360_F_424712960_7tynhmAqEquitDsuA6P8vJQaFmmeBax8.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-light);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.1) 0%, rgba(88, 166, 255, 0.05) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-custom-primary {
+            background: var(--accent-color);
+            border: none;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .btn-custom-primary:hover {
+            background: #1f6feb;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .btn-custom-secondary {
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .btn-custom-secondary:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .chat-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(33, 38, 45, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(48, 54, 61, 0.5);
+        }
+
+        .chat-message {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 12px;
+            position: relative;
+            animation: slideIn 0.5s ease;
+        }
+
+        .user-message {
+            background: var(--accent-color);
+            color: white;
+            margin-left: 50px;
+            text-align: right;
+        }
+
+        .ai-message {
+            background: var(--card-bg);
+            color: var(--text-light);
+            margin-right: 50px;
+            border: 1px solid #30363d;
+        }
+
+        .message-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            opacity: 0.8;
+        }
+
+        .response-options {
+            background: rgba(88, 166, 255, 0.1);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .response-options strong {
+            color: var(--accent-color);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pricing-section {
+            background: var(--darker-bg);
+            color: var(--text-light);
+        }
+
+        .pricing-card {
+            background: rgba(33, 38, 45, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(48, 54, 61, 0.5);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .price-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .price-features li {
+            padding: 10px 0;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .faq-question {
+            background: var(--card-bg);
+            color: var(--text-light);
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 1px solid #30363d;
+            width: 100%;
+            text-align: left;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .faq-answer {
+            padding: 20px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            display: none;
+            background: var(--card-bg);
+            border: 1px solid #30363d;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .footer-section {
+            background: var(--darker-bg);
+            color: var(--text-light);
+        }
+
+        .frustration-section {
+            background: var(--card-bg);
+            color: var(--text-light);
+            position: relative;
+        }
+
+        .frustration-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .frustration-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .frustration-item {
+            background: rgba(13, 17, 23, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(48, 54, 61, 0.5);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .frustration-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .frustration-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .frustration-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .frustration-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .text-balance {
+            text-wrap: balance;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="display-3 fw-bold mb-4 text-balance">Master the Art of the Approach with AI-Powered
+                    Practice</h1>
+                <p class="lead mb-4 mx-auto" style="max-width: 600px;">Never run out of things to say again. Train with
+                    realistic scenarios, get instant feedback, and build unshakeable confidence through AI-powered
+                    conversation coaching.</p>
+                <div class="mt-4">
+                    <a href="#waitlist" class="btn-custom-primary">Start Training My Brain</a>
+                    <a href="#demo" class="btn-custom-secondary">See It In Action</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Frustration Section -->
+    <section class="frustration-section py-5">
+        <div class="container">
+            <div class="frustration-content text-center">
+                <h2 class="display-5 fw-bold mb-2">Sound Familiar?</h2>
+                <p class="lead mb-5 opacity-75">You're not alone. These moments happen to every guy...</p>
+
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="frustration-item h-100">
+                            <span class="frustration-emoji">😶</span>
+                            <div class="frustration-text">"I had no idea what to say"</div>
+                            <div class="frustration-subtext">Mind went completely blank at the worst moment</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="frustration-item h-100">
+                            <span class="frustration-emoji">🤦‍♂️</span>
+                            <div class="frustration-text">"I said the wrong thing"</div>
+                            <div class="frustration-subtext">Perfect opportunity ruined by one awkward comment</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="frustration-item h-100">
+                            <span class="frustration-emoji">💭</span>
+                            <div class="frustration-text">"Thought of it 5 minutes later"</div>
+                            <div class="frustration-subtext">Always have the perfect response... after she's gone</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="frustration-item h-100">
+                            <span class="frustration-emoji">😰</span>
+                            <div class="frustration-text">"Too nervous to approach"</div>
+                            <div class="frustration-subtext">Fear of saying something stupid kept me frozen</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5">
+                    <h3 class="h4 mb-3">What if you could train your brain to always have the perfect response ready?
+                    </h3>
+                    <a href="#waitlist" class="btn-custom-primary btn-lg">Join the Waitlist →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-5" style="background-color: var(--dark-bg);">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="display-5 fw-bold mb-5" style="color: var(--text-light);">Stop Missing Out on Opportunities
+                </h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <div class="stat-number">73%</div>
+                            <div style="color: var(--text-muted);">of men regret not approaching someone attractive
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <div class="stat-number">5 sec</div>
+                            <div style="color: var(--text-muted);">Average time to think of the perfect response...
+                                after it's too late
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center">
+                            <div class="stat-number">∞</div>
+                            <div style="color: var(--text-muted);">Missed connections due to brain freeze</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5" style="background-color: var(--card-bg);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold" style="color: var(--text-light);">Train Your Brain for Instant Wit & Charm
+                </h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 border-0"
+                        style="background: rgba(13, 17, 23, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(48, 54, 61, 0.5) !important;">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">⚡</div>
+                            <h3 class="h5 fw-bold" style="color: var(--text-light);">Lightning-Fast Response Training
+                            </h3>
+                            <p style="color: var(--text-muted);">Practice thousands of scenarios until your brain
+                                automatically
+                                generates the perfect response in any situation. No more "I should have said that"
+                                moments.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 border-0"
+                        style="background: rgba(13, 17, 23, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(48, 54, 61, 0.5) !important;">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">🎯</div>
+                            <h3 class="h5 fw-bold" style="color: var(--text-light);">Opportunity Recognition</h3>
+                            <p style="color: var(--text-muted);">Learn to instantly spot and seize conversation
+                                opportunities. Turn casual encounters into
+                                meaningful connections before the moment passes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 border-0"
+                        style="background: rgba(13, 17, 23, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(48, 54, 61, 0.5) !important;">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">💡</div>
+                            <h3 class="h5 fw-bold" style="color: var(--text-light);">Context-Aware Responses</h3>
+                            <p style="color: var(--text-muted);">Master reading situations and delivering perfectly
+                                calibrated responses. Whether it's humor,
+                                depth, or flirtation - always know what to say.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 border-0"
+                        style="background: rgba(13, 17, 23, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(48, 54, 61, 0.5) !important;">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">🔄</div>
+                            <h3 class="h5 fw-bold" style="color: var(--text-light);">Conversation Recovery</h3>
+                            <p style="color: var(--text-muted);">Learn to smoothly navigate awkward moments, dead-ends,
+                                and challenging responses. Turn every
+                                conversation stumble into a stepping stone.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 border-0"
+                        style="background: rgba(13, 17, 23, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(48, 54, 61, 0.5) !important;">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">📊</div>
+                            <h3 class="h5 fw-bold" style="color: var(--text-light);">Real-Time Feedback</h3>
+                            <p style="color: var(--text-muted);">Get instant analysis of your responses and suggestions
+                                for improvement. Every interaction becomes
+                                a learning opportunity to sharpen your skills.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card feature-card h-100 border-0"
+                        style="background: rgba(13, 17, 23, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(48, 54, 61, 0.5) !important;">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">🔒</div>
+                            <h3 class="h5 fw-bold" style="color: var(--text-light);">Bank-Level Security</h3>
+                            <p style="color: var(--text-muted);">All conversations use end-to-end encrypted connections
+                                to protect your privacy. Your practice sessions and personal data are secured with
+                                military-grade encryption.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="py-5" style="background-color: var(--darker-bg);">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6">
+                    <img src="https://t4.ftcdn.net/jpg/04/24/71/29/360_F_424712960_7tynhmAqEquitDsuA6P8vJQaFmmeBax8.jpg"
+                        class="img-fluid rounded" alt="Confident man approaching woman"
+                        style="max-height: 400px; object-fit: cover; width: 100%;">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="display-6 fw-bold mb-4" style="color: var(--text-light);">From Speechless to Confident
+                    </h2>
+                    <p class="lead" style="color: var(--text-muted);">Join thousands of men who've transformed their
+                        dating lives using Charismo AI's brain training technology.</p>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="stat-number me-3">94%</div>
+                        <div style="color: var(--text-muted);">Report feeling more confident approaching women</div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="stat-number me-3">87%</div>
+                        <div style="color: var(--text-muted);">Get more phone numbers and dates</div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="stat-number me-3">91%</div>
+                        <div style="color: var(--text-muted);">Never run out of things to say anymore</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Demo Section -->
+    <section id="demo" class="py-5" style="background-color: var(--dark-bg);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold" style="color: var(--text-light);">See Charismo AI In Action</h2>
+                <p class="lead mx-auto" style="max-width: 600px; color: var(--text-muted);">Watch how our AI instantly
+                    generates
+                    multiple response options for any situation, training your brain to never be speechless again.</p>
+            </div>
+
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 order-lg-2">
+                    <img src="https://t4.ftcdn.net/jpg/04/24/71/29/360_F_424712960_7tynhmAqEquitDsuA6P8vJQaFmmeBax8.jpg"
+                        class="img-fluid rounded" alt="People having conversation"
+                        style="max-height: 300px; object-fit: cover; width: 100%;">
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <h3 class="h4 mb-3" style="color: var(--accent-color);">Real-Time Response Generation</h3>
+                    <p style="color: var(--text-muted);">Our AI analyzes the situation in real-time and provides you
+                        with multiple conversation options tailored to the context, your personality, and the vibe of
+                        the interaction.</p>
+                </div>
+            </div>
+
+            <div class="chat-container">
+                <div class="chat-message user-message">
+                    <div class="message-label">You:</div>
+                    I'm at a coffee shop and there's an attractive woman reading a book at the next table. I want to
+                    start a conversation but I'm drawing a complete blank. Help!
+                </div>
+
+                <div class="chat-message ai-message">
+                    <div class="message-label">Charismo AI:</div>
+                    I can see she's reading "The Seven Husbands of Evelyn Hugo." Here are 3 instant conversation
+                    starters:
+
+                    <div class="response-options">
+                        <strong>Option 1 (Book-focused):</strong> "Great book choice! I couldn't put that one down. Are
+                        you team Hugo or team Celia?"
+                    </div>
+
+                    <div class="response-options">
+                        <strong>Option 2 (Environment):</strong> "This place has the perfect reading vibe, doesn't it? I
+                        always end up people-watching instead of focusing on my book though."
+                    </div>
+
+                    <div class="response-options">
+                        <strong>Option 3 (Genuine curiosity):</strong> "I've been meaning to read that book - worth the
+                        hype? You look completely absorbed in it."
+                    </div>
+                </div>
+
+                <div class="chat-message user-message">
+                    <div class="message-label">You:</div>
+                    I went with option 1 and she smiled! She said she's team Celia but asked what I thought. Problem is,
+                    I haven't actually read it. What do I say now?
+                </div>
+
+                <div class="chat-message ai-message">
+                    <div class="message-label">Charismo AI:</div>
+                    Perfect opportunity to be honest and pivot! Try this:
+
+                    <div class="response-options">
+                        <strong>Honest + Curious:</strong> "I'll be honest - I haven't read it yet, but your enthusiasm
+                        is making me want to bump it to the top of my list. What makes Celia your favorite? No spoilers
+                        though!"
+                    </div>
+
+                    This shows honesty (attractive), genuine interest in her opinion (engaging), and creates a natural
+                    follow-up conversation about books and recommendations.
+                </div>
+
+                <div class="chat-message user-message">
+                    <div class="message-label">You:</div>
+                    That worked perfectly! We ended up talking for 20 minutes about books and got coffee together. I
+                    never would have thought of being honest about not reading it.
+                </div>
+
+                <div class="chat-message ai-message">
+                    <div class="message-label">Charismo AI:</div>
+                    Excellent! You just learned a key principle: authenticity beats perfection every time. Your brain is
+                    now creating a new neural pathway: "When I don't know something → be honest + show genuine curiosity
+                    = deeper connection."
+
+                    Ready for your next scenario? 🧠⚡
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5" style="background-color: var(--card-bg);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold" style="color: var(--text-light);">Results Speak for Themselves</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0"
+                        style="background-color: var(--darker-bg); border: 1px solid #30363d !important;">
+                        <div class="card-body p-4">
+                            <p class="fst-italic mb-3" style="color: var(--text-light);">"I used to freeze up completely
+                                when talking to women. Now I have
+                                multiple responses ready before they even finish talking. It's like having a
+                                superpower."</p>
+                            <p class="fw-bold mb-0" style="color: var(--accent-color);">- Jake, Early Beta User</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0"
+                        style="background-color: var(--darker-bg); border: 1px solid #30363d !important;">
+                        <div class="card-body p-4">
+                            <p class="fst-italic mb-3" style="color: var(--text-light);">"The AI trained my brain to see
+                                opportunities everywhere. What
+                                used to be awkward silences are now my favorite part of conversations - I always know
+                                how to fill them."</p>
+                            <p class="fw-bold mb-0" style="color: var(--accent-color);">- Marcus, Alpha Tester</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card h-100 border-0"
+                        style="background-color: var(--darker-bg); border: 1px solid #30363d !important;">
+                        <div class="card-body p-4">
+                            <p class="fst-italic mb-3" style="color: var(--text-light);">"Three weeks of practice and I
+                                went from overthinking every word
+                                to naturally flowing in conversations. My friends are asking what changed!"</p>
+                            <p class="fw-bold mb-0" style="color: var(--accent-color);">- David, Beta User</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="py-5" style="background-color: var(--card-bg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="text-center">
+                        <img src="https://t4.ftcdn.net/jpg/04/24/71/29/360_F_424712960_7tynhmAqEquitDsuA6P8vJQaFmmeBax8.jpg"
+                            class="rounded-circle mb-3" alt="Success story"
+                            style="width: 100px; height: 100px; object-fit: cover;">
+                        <blockquote class="blockquote">
+                            <p style="color: var(--text-light);">
+                                "I went from avoiding social situations to being the guy who always knows what to say.
+                                Charismo literally rewired my brain."
+                            </p>
+                            <footer class="blockquote-footer mt-2">
+                                <cite style="color: var(--text-muted);">Marcus, 29</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="text-center">
+                        <img src="https://t4.ftcdn.net/jpg/04/24/71/29/360_F_424712960_7tynhmAqEquitDsuA6P8vJQaFmmeBax8.jpg"
+                            class="rounded-circle mb-3" alt="Success story"
+                            style="width: 100px; height: 100px; object-fit: cover;">
+                        <blockquote class="blockquote">
+                            <p style="color: var(--text-light);">
+                                "The AI scenarios are so realistic. I practiced hundreds of conversations before my
+                                confidence skyrocketed."
+                            </p>
+                            <footer class="blockquote-footer mt-2">
+                                <cite style="color: var(--text-muted);">David, 25</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="text-center">
+                        <img src="https://t4.ftcdn.net/jpg/04/24/71/29/360_F_424712960_7tynhmAqEquitDsuA6P8vJQaFmmeBax8.jpg"
+                            class="rounded-circle mb-3" alt="Success story"
+                            style="width: 100px; height: 100px; object-fit: cover;">
+                        <blockquote class="blockquote">
+                            <p style="color: var(--text-light);">
+                                "Best investment I've made. My dating life completely transformed in just 3 weeks."
+                            </p>
+                            <footer class="blockquote-footer mt-2">
+                                <cite style="color: var(--text-muted);">Jake, 31</cite>
+                            </footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Never Miss Another Opportunity</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="card pricing-card">
+                        <div class="card-body text-center p-5">
+                            <div class="price" style="color: var(--text-light);">$39</div>
+                            <div class="mb-3" style="color: var(--text-muted);">one-time • 200 evaluations</div>
+                            <div class="mb-4" style="color: var(--accent-color); font-size: 1.1rem; font-weight: 600;">
+                                🍽️ Seriously, less than what you'd spend on dinner tonight
+                            </div>
+                            <ul class="price-features mb-4">
+                                <li style="color: var(--text-light);">✓ Multiple training scenarios</li>
+                                <li style="color: var(--text-light);">✓ Real-time conversation coaching</li>
+                                <li style="color: var(--text-light);">✓ Opportunity recognition training</li>
+                                <li style="color: var(--text-light);">✓ Context-aware response suggestions</li>
+                                <li style="color: var(--text-light);">✓ Progress tracking & brain training stats</li>
+                                <li style="color: var(--text-light);">✓ Graceful rejection handling</li>
+                                <li style="color: var(--text-light);">✓ 200 Evaluations valid for 1 year</li>
+                            </ul>
+                            <a href="#waitlist" class="btn-custom-primary">Join the Waitlist</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5" style="background-color: var(--dark-bg);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold" style="color: var(--text-light);">Frequently Asked Questions</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="mb-3">
+                        <button class="faq-question">How quickly will I see results?</button>
+                        <div class="faq-answer">How quickly results are seen will vary from person to person but
+                            rest-asured, as long as you regularly practice, you'll start noticing improvements within a
+                            few weeks. You can also keep track of your progress with the scores in-app</div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="faq-question">Is this just memorizing pickup lines?</button>
+                        <div class="faq-answer">Not at all. We train your brain to generate authentic, contextual
+                            responses in real-time. You'll learn patterns and principles, not scripts, so every response
+                            feels natural and genuine.</div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="faq-question">Will this work for introverts?</button>
+                        <div class="faq-answer">Absolutely! Many introverts are naturally thoughtful - we just help you
+                            access that thoughtfulness faster. You'll learn to leverage your natural strengths while
+                            building new response skills.</div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="faq-question">What if I freeze up in real situations?</button>
+                        <div class="faq-answer">That's exactly what we train for! We practice high-pressure scenarios so
+                            your brain has automated responses ready. The more you train, the less likely you are to
+                            freeze up.</div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="faq-question">What is your refund policy?</button>
+                        <div class="faq-answer">If you havent progressed past the first scenario and you're within 24
+                            hours of your purchase, we can offer you a full refund. Contact support.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="py-5"
+        style="background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="card"
+                        style="background: rgba(33, 38, 45, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(48, 54, 61, 0.5); border-radius: 20px;">
+                        <div class="card-body text-center p-5">
+                            <h3 class="h3 fw-bold mb-3" style="color: var(--text-light);">🎯 Ready to Never Be
+                                Speechless Again?</h3>
+                            <p class="lead mb-4" style="color: var(--text-muted);">Join our exclusive waitlist and be
+                                the first to transform your conversation skills with Charismo AI brain training.</p>
+
+
+                            <a href="https://forms.gle/Zio6JQtF8wpdnfHq5" class="btn-custom-primary btn-lg mb-3"
+                                style="display: flex; align-items: center; justify-content: center; margin: 0 auto; min-width: 280px;">
+                                <svg style="width: 24px; height: 24px; margin-right: 12px;" viewBox="0 0 24 24">
+                                    <path fill="currentColor"
+                                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                                    <path fill="currentColor"
+                                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                                    <path fill="currentColor"
+                                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                                    <path fill="currentColor"
+                                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                                </svg>
+                                Join Waitlist with Google
+                            </a>
+
+                            <div style="color: var(--text-muted); font-size: 0.9rem; opacity: 0.8;">
+                                🔒 Secure sign-up • No spam
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section py-4">
+        <div class="container">
+            <div class="text-center">
+                <p class="opacity-75 mb-0">&copy; 2026 Charismo AI. Train Your Brain. Never Miss an Opportunity. |
+                    Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function () {
+                const answer = this.nextElementSibling;
+                const isOpen = answer.style.display === 'block';
+
+                // Close all answers
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.style.display = 'none';
+                });
+
+                // Open clicked answer if it wasn't already open
+                if (!isOpen) {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.card, .stat-number').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
