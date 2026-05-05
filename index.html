@@ -389,6 +389,34 @@
         .text-balance {
             text-wrap: balance;
         }
+
+        .chat-input-container {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(48, 54, 61, 0.3);
+        }
+
+        .chat-input {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(45, 55, 65, 0.8);
+            border: 1px solid rgba(75, 85, 95, 0.4);
+            border-radius: 25px;
+            color: var(--text-light);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .chat-input::placeholder {
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+
+        .chat-input:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+        }
     </style>
 </head>
 
@@ -593,7 +621,7 @@
     </section>
 
     <!-- Success Stories Section -->
-    <section class="py-5" style="background-color: var(--darker-bg);">
+    <!-- <section class="py-5" style="background-color: var(--darker-bg);">
         <div class="container">
             <div class="row align-items-center mb-5">
                 <div class="col-lg-6">
@@ -621,7 +649,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Chat Demo Section -->
     <section id="demo" class="py-5" style="background-color: var(--dark-bg);">
@@ -686,7 +714,7 @@
                 </div>
 
                 <div class="analysis-section" style="max-width: 100%; margin: 20px 0;">
-                    <div class="section-title">Analysis</div>
+                    <div class="section-title">Evaluation</div>
                     <div style="margin-bottom: 15px;">
                         <p>Score: 7/10</p>
                         <p>Good opener You used observational humor and made it light. The
@@ -695,8 +723,8 @@
                             genuine
                             interest in her as a person, not just witty banter. Build connection by relating to her
                             situation.</p>
-                        <p>Would you like some possible openers you could have used instead? <a href=#>Request
-                                Openers</a></p>
+                        <p>You can type a reply or I can <a href=# class="text-light">show you some other potential
+                                openers.</a></p>
                     </div>
                 </div>
 
@@ -721,10 +749,10 @@
                 <div class="chat-message ai-message">
 
                     <div class="success-section">
-                        <div class="section-title">Excellent Recovery!</div>
+                        <div class="section-title">Evaluation</div>
+                        <p>Score: 9/10</p>
                         You found common ground, showed vulnerability (admitting you overthink too), and introduced
                         yourself naturally.
-                        <div class="score-badge" style="background: #22c55e;">Score: 9/10</div>
 
                         <div style="margin-top: 15px;">
                             <strong style="color: #22c55e;">Key Success Factors:</strong>
@@ -736,6 +764,11 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+
+                <!-- Chat Input -->
+                <div class="chat-input-container">
+                    <input type="text" class="chat-input" placeholder="What would you say?">
                 </div>
             </div>
         </div>
