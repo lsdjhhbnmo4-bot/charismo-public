@@ -114,7 +114,7 @@
         }
 
         .chat-container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             background: rgba(33, 38, 45, 0.8);
             backdrop-filter: blur(10px);
@@ -124,25 +124,34 @@
         }
 
         .chat-message {
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 12px;
+            margin-bottom: 25px;
             position: relative;
             animation: slideIn 0.5s ease;
         }
 
         .user-message {
-            background: var(--accent-color);
-            color: white;
-            margin-left: 50px;
-            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .user-bubble {
+            background: rgba(13, 17, 23, 0.8);
+            color: var(--text-light);
+            padding: 15px 20px;
+            border-radius: 18px 18px 5px 18px;
+            max-width: 70%;
+            border: 1px solid rgba(48, 54, 61, 0.5);
         }
 
         .ai-message {
-            background: var(--card-bg);
+            width: 100%;
             color: var(--text-light);
-            margin-right: 50px;
-            border: 1px solid #30363d;
+        }
+
+        .ai-response-message {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 25px;
         }
 
         .message-label {
@@ -150,19 +159,109 @@
             font-weight: 600;
             margin-bottom: 8px;
             opacity: 0.8;
-        }
-
-        .response-options {
-            background: rgba(88, 166, 255, 0.1);
-            border: 1px solid rgba(88, 166, 255, 0.3);
-            border-radius: 8px;
-            padding: 12px;
-            margin-top: 10px;
-            font-size: 0.9rem;
-        }
-
-        .response-options strong {
             color: var(--accent-color);
+        }
+
+        .ai-response-section {
+            margin-bottom: 20px;
+        }
+
+        .simulated-response {
+            background: rgba(45, 55, 65, 0.9);
+            border: 1px solid rgba(75, 85, 95, 0.4);
+            padding: 15px 20px;
+            border-radius: 5px 18px 18px 18px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            max-width: 70%;
+        }
+
+        .simulated-response .section-title {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .analysis-section {
+            background: rgba(33, 38, 45, 0.6);
+            border: 1px solid rgba(48, 54, 61, 0.5);
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+        }
+
+        .analysis-section .section-title {
+            color: #ffa500;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .score-badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin: 8px 0;
+        }
+
+        .improvement-section {
+            background: rgba(255, 165, 0, 0.1);
+            border-left: 4px solid #ffa500;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .improvement-section .section-title {
+            color: #ffa500;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .success-section {
+            background: rgba(34, 197, 94, 0.1);
+            border-left: 4px solid #22c55e;
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .success-section .section-title {
+            color: #22c55e;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .success-list {
+            list-style: none;
+            padding: 0;
+            margin: 8px 0;
+        }
+
+        .success-list li {
+            padding: 3px 0;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .success-list li:before {
+            content: '•';
+            color: #22c55e;
+            position: absolute;
+            left: 0;
         }
 
         @keyframes slideIn {
@@ -294,8 +393,23 @@
 </head>
 
 <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
+        style="background-color: var(--darker-bg); border-bottom: 1px solid rgba(48, 54, 61, 0.5); backdrop-filter: blur(10px);">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" style="color: var(--text-light); font-size: 1.5rem;">
+                Charismo AI
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a href="/app/" class="btn-custom-primary" style="padding: 12px 24px; font-size: 1rem; margin: 0;">
+                    Open App
+                </a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section" style="padding-top: 150px;">
         <div class="container">
             <div class="hero-content text-center">
                 <h1 class="display-3 fw-bold mb-4 text-balance">Master the Art of the Approach with AI-Powered
@@ -515,92 +629,120 @@
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold" style="color: var(--text-light);">See Charismo AI In Action</h2>
                 <p class="lead mx-auto" style="max-width: 600px; color: var(--text-muted);">Watch how our AI instantly
-                    generates
-                    multiple response options for any situation, training your brain to never be speechless again.</p>
+                    generates multiple response options for any situation, training your brain to never be speechless
+                    again.</p>
             </div>
 
+            <!-- Scenario Section -->
             <div class="row align-items-center mb-5">
-                <div class="col-lg-6 order-lg-2">
-                    <img src="https://t4.ftcdn.net/jpg/04/24/71/29/360_F_424712960_7tynhmAqEquitDsuA6P8vJQaFmmeBax8.jpg"
-                        class="img-fluid rounded" alt="People having conversation"
-                        style="max-height: 300px; object-fit: cover; width: 100%;">
+                <div class="col-lg-6">
+                    <img src="https://lsdjhhbnmo4-bot.github.io/charismo-public/9fc2c84b-3337-4b4d-af04-efb65f5e03c5.png"
+                        class="img-fluid rounded" alt="Bar scenario"
+                        style="max-height: 300px; object-fit: cover; width: 100%; border: 2px solid rgba(88, 166, 255, 0.2);">
                 </div>
-                <div class="col-lg-6 order-lg-1">
-                    <h3 class="h4 mb-3" style="color: var(--accent-color);">Real-Time Response Generation</h3>
-                    <p style="color: var(--text-muted);">Our AI analyzes the situation in real-time and provides you
-                        with multiple conversation options tailored to the context, your personality, and the vibe of
-                        the interaction.</p>
+                <div class="col-lg-6">
+                    <div class="scenario-content">
+                        <div class="mb-3">
+                            <h3 class="h4" style="color: var(--text-light);">Bar Approach</h3>
+                            <p><small>Difficulty:</small>
+                                <span class="badge bg-warning">Intermediate</span>
+                            </p>
+                        </div>
+                        <p style=" line-height: 1.6;">
+                            You're at a trendy bar when you notice an attractive woman sitting alone, holding her drink
+                            and looking down at it thoughtfully.
+                            She seems relaxed but perhaps a bit contemplative. The atmosphere is lively but not too
+                            loud, and you feel drawn to start a
+                            conversation. This scenario tests your ability to read the room and approach with the right
+                            energy and timing.
+                        </p>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Chat Section -->
+            <div class="text-center mb-4">
+                <h3 class="h5" style="color: var(--accent-color);">How would you approach?</h3>
+                <p style="color: var(--text-muted);">Type what you would say directly into the chatbox to interact.</p>
             </div>
 
             <div class="chat-container">
                 <div class="chat-message user-message">
-                    <div class="message-label">You:</div>
-                    I'm at a coffee shop and there's an attractive woman reading a book at the next table. I want to
-                    start a conversation but I'm drawing a complete blank. Help!
+                    <div class="user-bubble">
+                        Hey,
+                        you
+                        look like you're having some deep thoughts about that drink. Is it telling you the secrets of
+                        the
+                        universe?
+                    </div>
                 </div>
 
-                <div class="chat-message ai-message">
-                    <div class="message-label">Charismo AI:</div>
-                    I can see she's reading "The Seven Husbands of Evelyn Hugo." Here are 3 instant conversation
-                    starters:
-
-                    <div class="response-options">
-                        <strong>Option 1 (Book-focused):</strong> "Great book choice! I couldn't put that one down. Are
-                        you team Hugo or team Celia?"
+                <div class="chat-message ai-response-message">
+                    <div class="simulated-response">
+                        <div class="section-title">Her Response</div>
+                        <em>*She looks up with a slight smile*</em> "Ha, I wish it were that exciting. Just debating
+                        whether to have another or call it a night. What brings you over here?"
                     </div>
+                </div>
 
-                    <div class="response-options">
-                        <strong>Option 2 (Environment):</strong> "This place has the perfect reading vibe, doesn't it? I
-                        always end up people-watching instead of focusing on my book though."
-                    </div>
-
-                    <div class="response-options">
-                        <strong>Option 3 (Genuine curiosity):</strong> "I've been meaning to read that book - worth the
-                        hype? You look completely absorbed in it."
+                <div class="analysis-section" style="max-width: 100%; margin: 20px 0;">
+                    <div class="section-title">Analysis</div>
+                    <div style="margin-bottom: 15px;">
+                        <p>Score: 7/10</p>
+                        <p>Good opener You used observational humor and made it light. The
+                            "secrets of the universe" line shows creativity and breaks the ice nicely.</p>
+                        <p><strong>Areas for Improvement:</strong><br />Consider following up with something that shows
+                            genuine
+                            interest in her as a person, not just witty banter. Build connection by relating to her
+                            situation.</p>
+                        <p>Would you like some possible openers you could have used instead? <a href=#>Request
+                                Openers</a></p>
                     </div>
                 </div>
 
                 <div class="chat-message user-message">
-                    <div class="message-label">You:</div>
-                    I went with option 1 and she smiled! She said she's team Celia but asked what I thought. Problem is,
-                    I haven't actually read it. What do I say now?
-                </div>
-
-                <div class="chat-message ai-message">
-                    <div class="message-label">Charismo AI:</div>
-                    Perfect opportunity to be honest and pivot! Try this:
-
-                    <div class="response-options">
-                        <strong>Honest + Curious:</strong> "I'll be honest - I haven't read it yet, but your enthusiasm
-                        is making me want to bump it to the top of my list. What makes Celia your favorite? No spoilers
-                        though!"
+                    <div class="user-bubble">
+                        Well, I was actually having the same debate about my drink when I noticed you doing the exact
+                        same
+                        thing. Seemed like we might be kindred spirits in the art of overthinking beverages. I'm Alex,
+                        by
+                        the way.
                     </div>
-
-                    This shows honesty (attractive), genuine interest in her opinion (engaging), and creates a natural
-                    follow-up conversation about books and recommendations.
                 </div>
 
-                <div class="chat-message user-message">
-                    <div class="message-label">You:</div>
-                    That worked perfectly! We ended up talking for 20 minutes about books and got coffee together. I
-                    never would have thought of being honest about not reading it.
+                <div class="chat-message ai-response-message">
+                    <div class="simulated-response">
+                        <div class="section-title">Her Response</div>
+                        <em>*She laughs genuinely*</em> "Sarah. And you're absolutely right - I definitely overthink
+                        everything, including drinks apparently. Are you always this observant, or am I that obvious?"
+                    </div>
                 </div>
 
                 <div class="chat-message ai-message">
-                    <div class="message-label">Charismo AI:</div>
-                    Excellent! You just learned a key principle: authenticity beats perfection every time. Your brain is
-                    now creating a new neural pathway: "When I don't know something → be honest + show genuine curiosity
-                    = deeper connection."
 
-                    Ready for your next scenario? 🧠⚡
+                    <div class="success-section">
+                        <div class="section-title">Excellent Recovery!</div>
+                        You found common ground, showed vulnerability (admitting you overthink too), and introduced
+                        yourself naturally.
+                        <div class="score-badge" style="background: #22c55e;">Score: 9/10</div>
+
+                        <div style="margin-top: 15px;">
+                            <strong style="color: #22c55e;">Key Success Factors:</strong>
+                            <ul class="success-list">
+                                <li>Created connection through shared experience</li>
+                                <li>Used self-deprecating humor appropriately</li>
+                                <li>Smooth name introduction</li>
+                                <li>She's now engaged and asking you questions - conversation momentum achieved! 🎯</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-5" style="background-color: var(--card-bg);">
+    <!-- <section class="py-5" style="background-color: var(--card-bg);">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold" style="color: var(--text-light);">Results Speak for Themselves</h2>
@@ -643,10 +785,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Social Proof Section -->
-    <section class="py-5" style="background-color: var(--card-bg);">
+    <!-- <section class="py-5" style="background-color: var(--card-bg);">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4">
@@ -698,7 +840,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Pricing Section -->
     <section id="pricing" class="pricing-section py-5">
