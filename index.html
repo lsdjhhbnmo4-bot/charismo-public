@@ -417,19 +417,207 @@
             border-color: var(--accent-color);
             box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
         }
+
+        .chat-options {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .chat-option-btn {
+            background: rgba(13, 17, 23, 0.9);
+            color: var(--text-light);
+            border: 1px solid rgba(75, 85, 95, 0.4);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .chat-option-btn:hover {
+            background: rgba(33, 38, 45, 0.9);
+            border-color: var(--accent-color);
+            color: var(--text-light);
+        }
+
+        .chat-option-btn.selected {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+        }
+
+        .chat-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .chat-input-with-help {
+            width: 100%;
+            padding: 15px 80px 15px 20px;
+            background: rgba(45, 55, 65, 0.8);
+            border: 1px solid rgba(75, 85, 95, 0.4);
+            border-radius: 25px;
+            color: var(--text-light);
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .chat-input-with-help::placeholder {
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+
+        .chat-input-with-help:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+        }
+
+        .help-button {
+            position: absolute;
+            right: 8px;
+            background: rgba(13, 17, 23, 0.9);
+            color: var(--text-muted);
+            border: 1px solid rgba(75, 85, 95, 0.4);
+            padding: 8px 14px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .help-button:hover {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        /* Custom utility classes */
+        .navbar-custom {
+            background-color: var(--darker-bg);
+            border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar-brand-custom {
+            color: var(--text-light);
+            font-size: 1.5rem;
+        }
+
+        .navbar-brand-custom:hover {
+            color: var(--text-light);
+        }
+
+        .btn-nav-custom {
+            padding: 12px 24px;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .hero-padding {
+            padding-top: 150px;
+        }
+
+        .max-width-600 {
+            max-width: 600px;
+        }
+
+        .bg-dark-custom {
+            background-color: var(--dark-bg);
+        }
+
+        .bg-card-custom {
+            background-color: var(--card-bg);
+        }
+
+        .text-light-custom {
+            color: var(--text-light);
+        }
+
+        .text-muted-custom {
+            color: var(--text-muted);
+        }
+
+        .feature-card-custom {
+            background: rgba(13, 17, 23, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(48, 54, 61, 0.5) !important;
+        }
+
+        .scenario-image {
+            max-height: 300px;
+            object-fit: cover;
+            width: 100%;
+            border: 2px solid rgba(88, 166, 255, 0.2);
+        }
+
+        .analysis-container {
+            max-width: 100%;
+            margin: 20px 0;
+        }
+
+        .line-height-1-6 {
+            line-height: 1.6;
+        }
+
+        .pricing-price-custom {
+            color: var(--text-light);
+        }
+
+        .pricing-subtitle-custom {
+            color: var(--text-muted);
+        }
+
+        .pricing-highlight {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .bg-gradient-custom {
+            background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+        }
+
+        .waitlist-card {
+            background: rgba(33, 38, 45, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(48, 54, 61, 0.5);
+            border-radius: 20px;
+        }
+
+        .btn-waitlist {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            min-width: 280px;
+        }
+
+        .security-note {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .text-accent-custom {
+            color: var(--accent-color);
+        }
     </style>
 </head>
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top"
-        style="background-color: var(--darker-bg); border-bottom: 1px solid rgba(48, 54, 61, 0.5); backdrop-filter: blur(10px);">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#" style="color: var(--text-light); font-size: 1.5rem;">
+            <a class="navbar-brand fw-bold navbar-brand-custom" href="#">
                 Charismo AI
             </a>
             <div class="navbar-nav ms-auto">
-                <a href="/app/" class="btn-custom-primary" style="padding: 12px 24px; font-size: 1rem; margin: 0;">
+                <a href="/app/" class="btn-custom-primary btn-nav-custom">
                     Open App
                 </a>
             </div>
@@ -437,12 +625,12 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section" style="padding-top: 150px;">
+    <section class="hero-section hero-padding">
         <div class="container">
             <div class="hero-content text-center">
                 <h1 class="display-3 fw-bold mb-4 text-balance">Master the Art of the Approach with AI-Powered
                     Practice</h1>
-                <p class="lead mb-4 mx-auto" style="max-width: 600px;">Never run out of things to say again. Train with
+                <p class="lead mb-4 mx-auto max-width-600">Never run out of things to say again. Train with
                     realistic scenarios, get instant feedback, and build unshakeable confidence through AI-powered
                     conversation coaching.</p>
                 <div class="mt-4">
@@ -501,23 +689,23 @@
     </section>
 
     <!-- Problem Section -->
-    <section class="py-5" style="background-color: var(--dark-bg);">
+    <section class="py-5 bg-dark-custom">
         <div class="container">
             <div class="text-center">
-                <h2 class="display-5 fw-bold mb-5" style="color: var(--text-light);">Stop Missing Out on Opportunities
+                <h2 class="display-5 fw-bold mb-5 text-light-custom">Stop Missing Out on Opportunities
                 </h2>
                 <div class="row g-4">
                     <div class="col-md-4">
                         <div class="text-center">
                             <div class="stat-number">73%</div>
-                            <div style="color: var(--text-muted);">of men regret not approaching someone attractive
+                            <div class="text-muted-custom">of men regret not approaching someone attractive
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="text-center">
                             <div class="stat-number">5 sec</div>
-                            <div style="color: var(--text-muted);">Average time to think of the perfect response...
+                            <div class="text-muted-custom">Average time to think of the perfect response...
                                 after it's too late
                             </div>
                         </div>
@@ -525,7 +713,7 @@
                     <div class="col-md-4">
                         <div class="text-center">
                             <div class="stat-number">∞</div>
-                            <div style="color: var(--text-muted);">Missed connections due to brain freeze</div>
+                            <div class="text-muted-custom">Missed connections due to brain freeze</div>
                         </div>
                     </div>
                 </div>
@@ -534,21 +722,20 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-5" style="background-color: var(--card-bg);">
+    <section id="features" class="py-5 bg-card-custom">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold" style="color: var(--text-light);">Train Your Brain for Instant Wit & Charm
+                <h2 class="display-5 fw-bold text-light-custom">Train Your Brain for Instant Wit & Charm
                 </h2>
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
-                    <div class="card feature-card h-100 border-0"
-                        style="background: rgba(13, 17, 23, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(48, 54, 61, 0.5) !important;">
+                    <div class="card feature-card h-100 border-0 feature-card-custom">
                         <div class="card-body text-center p-4">
                             <div class="feature-icon">⚡</div>
-                            <h3 class="h5 fw-bold" style="color: var(--text-light);">Lightning-Fast Response Training
+                            <h3 class="h5 fw-bold text-light-custom">Lightning-Fast Response Training
                             </h3>
-                            <p style="color: var(--text-muted);">Practice thousands of scenarios until your brain
+                            <p class="text-muted-custom">Practice thousands of scenarios until your brain
                                 automatically
                                 generates the perfect response in any situation. No more "I should have said that"
                                 moments.</p>
@@ -557,60 +744,55 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6">
-                    <div class="card feature-card h-100 border-0"
-                        style="background: rgba(13, 17, 23, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(48, 54, 61, 0.5) !important;">
+                    <div class="card feature-card h-100 border-0 feature-card-custom">
                         <div class="card-body text-center p-4">
                             <div class="feature-icon">🎯</div>
-                            <h3 class="h5 fw-bold" style="color: var(--text-light);">Opportunity Recognition</h3>
-                            <p style="color: var(--text-muted);">Learn to instantly spot and seize conversation
+                            <h3 class="h5 fw-bold text-light-custom">Opportunity Recognition</h3>
+                            <p class="text-muted-custom">Learn to instantly spot and seize conversation
                                 opportunities. Turn casual encounters into
                                 meaningful connections before the moment passes.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="card feature-card h-100 border-0"
-                        style="background: rgba(13, 17, 23, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(48, 54, 61, 0.5) !important;">
+                    <div class="card feature-card h-100 border-0 feature-card-custom">
                         <div class="card-body text-center p-4">
                             <div class="feature-icon">💡</div>
-                            <h3 class="h5 fw-bold" style="color: var(--text-light);">Context-Aware Responses</h3>
-                            <p style="color: var(--text-muted);">Master reading situations and delivering perfectly
+                            <h3 class="h5 fw-bold text-light-custom">Context-Aware Responses</h3>
+                            <p class="text-muted-custom">Master reading situations and delivering perfectly
                                 calibrated responses. Whether it's humor,
                                 depth, or flirtation - always know what to say.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="card feature-card h-100 border-0"
-                        style="background: rgba(13, 17, 23, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(48, 54, 61, 0.5) !important;">
+                    <div class="card feature-card h-100 border-0 feature-card-custom">
                         <div class="card-body text-center p-4">
                             <div class="feature-icon">🔄</div>
-                            <h3 class="h5 fw-bold" style="color: var(--text-light);">Conversation Recovery</h3>
-                            <p style="color: var(--text-muted);">Learn to smoothly navigate awkward moments, dead-ends,
+                            <h3 class="h5 fw-bold text-light-custom">Conversation Recovery</h3>
+                            <p class="text-muted-custom">Learn to smoothly navigate awkward moments, dead-ends,
                                 and challenging responses. Turn every
                                 conversation stumble into a stepping stone.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="card feature-card h-100 border-0"
-                        style="background: rgba(13, 17, 23, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(48, 54, 61, 0.5) !important;">
+                    <div class="card feature-card h-100 border-0 feature-card-custom">
                         <div class="card-body text-center p-4">
                             <div class="feature-icon">📊</div>
-                            <h3 class="h5 fw-bold" style="color: var(--text-light);">Real-Time Feedback</h3>
-                            <p style="color: var(--text-muted);">Get instant analysis of your responses and suggestions
+                            <h3 class="h5 fw-bold text-light-custom">Real-Time Feedback</h3>
+                            <p class="text-muted-custom">Get instant analysis of your responses and suggestions
                                 for improvement. Every interaction becomes
                                 a learning opportunity to sharpen your skills.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="card feature-card h-100 border-0"
-                        style="background: rgba(13, 17, 23, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(48, 54, 61, 0.5) !important;">
+                    <div class="card feature-card h-100 border-0 feature-card-custom">
                         <div class="card-body text-center p-4">
                             <div class="feature-icon">🔒</div>
-                            <h3 class="h5 fw-bold" style="color: var(--text-light);">Bank-Level Security</h3>
-                            <p style="color: var(--text-muted);">All conversations use end-to-end encrypted connections
+                            <h3 class="h5 fw-bold text-light-custom">Bank-Level Security</h3>
+                            <p class="text-muted-custom">All conversations use end-to-end encrypted connections
                                 to protect your privacy. Your practice sessions and personal data are secured with
                                 military-grade encryption.</p>
                         </div>
@@ -652,11 +834,11 @@
     </section> -->
 
     <!-- Chat Demo Section -->
-    <section id="demo" class="py-5" style="background-color: var(--dark-bg);">
+    <section id="demo" class="py-5 bg-dark-custom">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold" style="color: var(--text-light);">See Charismo AI In Action</h2>
-                <p class="lead mx-auto" style="max-width: 600px; color: var(--text-muted);">Watch how our AI instantly
+                <h2 class="display-5 fw-bold text-light-custom">See Charismo AI In Action</h2>
+                <p class="lead mx-auto max-width-600 text-muted-custom">Watch how our AI instantly
                     generates multiple response options for any situation, training your brain to never be speechless
                     again.</p>
             </div>
@@ -665,18 +847,17 @@
             <div class="row align-items-center mb-5">
                 <div class="col-lg-6">
                     <img src="https://lsdjhhbnmo4-bot.github.io/charismo-public/9fc2c84b-3337-4b4d-af04-efb65f5e03c5.png"
-                        class="img-fluid rounded" alt="Bar scenario"
-                        style="max-height: 300px; object-fit: cover; width: 100%; border: 2px solid rgba(88, 166, 255, 0.2);">
+                        class="img-fluid rounded scenario-image" alt="Bar scenario">
                 </div>
                 <div class="col-lg-6">
                     <div class="scenario-content">
                         <div class="mb-3">
-                            <h3 class="h4" style="color: var(--text-light);">Bar Approach</h3>
-                            <p><small>Difficulty:</small>
+                            <h3 class="h4 text-light-custom">Bar Approach</h3>
+                            <p>Difficulty:
                                 <span class="badge bg-warning">Intermediate</span>
                             </p>
                         </div>
-                        <p style=" line-height: 1.6;">
+                        <p class="line-height-1-6">
                             You're at a trendy bar when you notice an attractive woman sitting alone, holding her drink
                             and looking down at it thoughtfully.
                             She seems relaxed but perhaps a bit contemplative. The atmosphere is lively but not too
@@ -690,85 +871,182 @@
 
             <!-- Chat Section -->
             <div class="text-center mb-4">
-                <h3 class="h5" style="color: var(--accent-color);">How would you approach?</h3>
-                <p style="color: var(--text-muted);">Type what you would say directly into the chatbox to interact.</p>
+                <h3 class="h5 text-accent-custom">How would you approach?</h3>
+                <p class="text-muted-custom">Type what you would say directly into the chatbox to interact.</p>
             </div>
 
-            <div class="chat-container">
-                <div class="chat-message user-message">
-                    <div class="user-bubble">
-                        Hey,
-                        you
-                        look like you're having some deep thoughts about that drink. Is it telling you the secrets of
-                        the
-                        universe?
-                    </div>
-                </div>
+            <div class="row g-4">
+                <!-- Chat Interface -->
+                <div class="col-lg-8">
+                    <div class="chat-container">
+                        <div class="chat-message user-message">
+                            <div class="user-bubble">
+                                Hey,
+                                you
+                                look like you're having some deep thoughts about that drink. Is it telling you the
+                                secrets of
+                                the
+                                universe?
+                            </div>
+                        </div>
 
-                <div class="chat-message ai-response-message">
-                    <div class="simulated-response">
-                        <div class="section-title">Her Response</div>
-                        <em>*She looks up with a slight smile*</em> "Ha, I wish it were that exciting. Just debating
-                        whether to have another or call it a night. What brings you over here?"
-                    </div>
-                </div>
+                        <div class="chat-message ai-response-message">
+                            <div class="simulated-response">
+                                <div class="section-title">Her Response</div>
+                                <em>*She looks up with a slight smile*</em> "Ha, I wish it were that exciting. Just
+                                debating
+                                whether to have another or call it a night. What brings you over here?"
+                            </div>
+                        </div>
 
-                <div class="analysis-section" style="max-width: 100%; margin: 20px 0;">
-                    <div class="section-title">Evaluation</div>
-                    <div style="margin-bottom: 15px;">
-                        <p>Score: 7/10</p>
-                        <p>Good opener You used observational humor and made it light. The
-                            "secrets of the universe" line shows creativity and breaks the ice nicely.</p>
-                        <p><strong>Areas for Improvement:</strong><br />Consider following up with something that shows
-                            genuine
-                            interest in her as a person, not just witty banter. Build connection by relating to her
-                            situation.</p>
-                        <p>You can type a reply or I can <a href=# class="text-light">show you some other potential
-                                openers.</a></p>
-                    </div>
-                </div>
+                        <div class="analysis-section analysis-container">
+                            <div class="section-title">Coach</div>
+                            <div style="margin-bottom: 15px;">
+                                <p>Score: 7/10</p>
+                                <p>Good opener You used observational humor and made it light. The
+                                    "secrets of the universe" line shows creativity and breaks the ice nicely.</p>
+                                <p><strong>Areas for Improvement:</strong><br />Consider following up with something
+                                    that shows
+                                    genuine
+                                    interest in her as a person, not just witty banter. Build connection by relating to
+                                    her
+                                    situation.</p>
+                                <p>You can type a reply or I can <a href=# class="text-light">show you some other
+                                        potential
+                                        openers.</a></p>
+                            </div>
+                        </div>
 
-                <div class="chat-message user-message">
-                    <div class="user-bubble">
-                        Well, I was actually having the same debate about my drink when I noticed you doing the exact
-                        same
-                        thing. Seemed like we might be kindred spirits in the art of overthinking beverages. I'm Alex,
-                        by
-                        the way.
-                    </div>
-                </div>
+                        <div class="chat-message user-message">
+                            <div class="user-bubble">
+                                Well, I was actually having the same debate about my drink when I noticed you doing the
+                                exact
+                                same
+                                thing. Seemed like we might be kindred spirits in the art of overthinking beverages. I'm
+                                Alex,
+                                by
+                                the way.
+                            </div>
+                        </div>
 
-                <div class="chat-message ai-response-message">
-                    <div class="simulated-response">
-                        <div class="section-title">Her Response</div>
-                        <em>*She laughs genuinely*</em> "Sarah. And you're absolutely right - I definitely overthink
-                        everything, including drinks apparently. Are you always this observant, or am I that obvious?"
-                    </div>
-                </div>
+                        <div class="chat-message ai-response-message">
+                            <div class="simulated-response">
+                                <div class="section-title">Her Response</div>
+                                <em>*She laughs genuinely*</em> "Sarah. And you're absolutely right - I definitely
+                                overthink
+                                everything, including drinks apparently. Are you always this observant, or am I that
+                                obvious?"
+                            </div>
+                        </div>
 
-                <div class="chat-message ai-message">
+                        <div class="chat-message ai-message">
 
-                    <div class="success-section">
-                        <div class="section-title">Evaluation</div>
-                        <p>Score: 9/10</p>
-                        You found common ground, showed vulnerability (admitting you overthink too), and introduced
-                        yourself naturally.
+                            <div class="success-section">
+                                <div class="section-title">Coach</div>
+                                <p>Score: 9/10</p>
+                                You found common ground, showed vulnerability (admitting you overthink too), and
+                                introduced
+                                yourself naturally.
 
-                        <div style="margin-top: 15px;">
-                            <strong style="color: #22c55e;">Key Success Factors:</strong>
-                            <ul class="success-list">
-                                <li>Created connection through shared experience</li>
-                                <li>Used self-deprecating humor appropriately</li>
-                                <li>Smooth name introduction</li>
-                                <li>She's now engaged and asking you questions - conversation momentum achieved! 🎯</li>
-                            </ul>
+                                <div style="margin-top: 15px;">
+                                    <strong style="color: #22c55e;">Key Success Factors:</strong>
+                                    <ul class="success-list">
+                                        <li>Created connection through shared experience</li>
+                                        <li>Used self-deprecating humor appropriately</li>
+                                        <li>Smooth name introduction</li>
+                                        <li>She's now engaged and asking you questions - conversation momentum achieved!
+                                            🎯</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chat Input -->
+                        <div class="chat-input-container">
+                            <div class="chat-options">
+                                <button class="chat-option-btn selected">💬 Reply to Her</button>
+                                <button class="chat-option-btn">🤔 Ask Coach Something</button>
+                                <button class="chat-option-btn">💡 Show Alternative Ideas</button>
+                            </div>
+                            <div class="chat-input-wrapper">
+                                <input type="text" class="chat-input-with-help" placeholder="What would you say?">
+                                <button class="help-button">❓ Help</button>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Chat Input -->
-                <div class="chat-input-container">
-                    <input type="text" class="chat-input" placeholder="What would you say?">
+                <!-- Strategic Approach Hints -->
+                <div class="col-lg-4">
+                    <div class="hints-container"
+                        style="background: rgba(33, 38, 45, 0.8); border-radius: 15px; padding: 25px; border: 1px solid rgba(48, 54, 61, 0.5); position: sticky; top: 20px;">
+                        <h4 class="h5 text-light-custom mb-3">
+                            <i class="fas fa-lightbulb" style="color: #ffa500; margin-right: 8px;"></i>
+                            Strategic Approach Tips
+                        </h4>
+
+                        <div class="hint-section mb-4">
+                            <div class="hint-title"
+                                style="color: #58a6ff; font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                🔍 Read The Environment
+                            </div>
+                            <ul
+                                style="color: var(--text-light); font-size: 0.85rem; line-height: 1.5; margin: 0; padding-left: 15px;">
+                                <li>She's sitting alone - likely open to conversation</li>
+                                <li>Looking down thoughtfully - introspective mood</li>
+                                <li>Bar atmosphere is lively but manageable</li>
+                                <li>Her posture seems relaxed, not closed off</li>
+                            </ul>
+                        </div>
+
+                        <div class="hint-section mb-4">
+                            <div class="hint-title"
+                                style="color: #22c55e; font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                💭 Consider Her Perspective
+                            </div>
+                            <ul
+                                style="color: var(--text-light); font-size: 0.85rem; line-height: 1.5; margin: 0; padding-left: 15px;">
+                                <li>Why is she alone? (Choice vs circumstance)</li>
+                                <li>What might she be thinking about?</li>
+                                <li>Is she waiting for someone or enjoying solitude?</li>
+                                <li>What kind of energy would she appreciate?</li>
+                            </ul>
+                        </div>
+
+                        <div class="hint-section mb-4">
+                            <div class="hint-title"
+                                style="color: #ffa500; font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                🎯 Beyond Appearance
+                            </div>
+                            <div
+                                style="background: rgba(255, 165, 0, 0.1); border-left: 3px solid #ffa500; padding: 12px; border-radius: 0 8px 8px 0; margin-bottom: 12px;">
+                                <p style="color: var(--text-light); font-size: 0.85rem; margin: 0; line-height: 1.4;">
+                                    <strong>Be Cautious:</strong> Generic compliments about looks are often hit or miss.
+                                    It's a low effort compliment but it could work.
+                                </p>
+                            </div>
+                            <p style="color: var(--text-light); font-size: 0.85rem; margin: 0; line-height: 1.4;">
+                                <strong>Try instead:</strong> Observational humor, shared experiences, genuine curiosity
+                                about her thoughts or perspective.
+                            </p>
+                        </div>
+
+                        <div class="hint-section">
+                            <div class="hint-title"
+                                style="color: #e879f9; font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                💡 Conversation Starters
+                            </div>
+                            <div style="background: rgba(232, 121, 249, 0.1); border-radius: 8px; padding: 12px;">
+                                <ul
+                                    style="color: var(--text-light); font-size: 0.85rem; line-height: 1.4; margin: 0; padding-left: 15px;">
+                                    <li>Comment on her drink choice or decision-making</li>
+                                    <li>Make an observation about the venue/atmosphere</li>
+                                    <li>Share a relatable experience or dilemma</li>
+                                    <li>Ask for her opinion on something happening around you</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -885,19 +1163,19 @@
                 <div class="col-lg-6 col-md-8">
                     <div class="card pricing-card">
                         <div class="card-body text-center p-5">
-                            <div class="price" style="color: var(--text-light);">$39</div>
-                            <div class="mb-3" style="color: var(--text-muted);">one-time • 200 evaluations</div>
-                            <div class="mb-4" style="color: var(--accent-color); font-size: 1.1rem; font-weight: 600;">
+                            <div class="price pricing-price-custom">$39</div>
+                            <div class="mb-3 pricing-subtitle-custom">one-time • 500 evaluations</div>
+                            <div class="mb-4 pricing-highlight">
                                 🍽️ Seriously, less than what you'd spend on dinner tonight
                             </div>
                             <ul class="price-features mb-4">
-                                <li style="color: var(--text-light);">✓ Multiple training scenarios</li>
-                                <li style="color: var(--text-light);">✓ Real-time conversation coaching</li>
-                                <li style="color: var(--text-light);">✓ Opportunity recognition training</li>
-                                <li style="color: var(--text-light);">✓ Context-aware response suggestions</li>
-                                <li style="color: var(--text-light);">✓ Progress tracking & brain training stats</li>
-                                <li style="color: var(--text-light);">✓ Graceful rejection handling</li>
-                                <li style="color: var(--text-light);">✓ 200 Evaluations valid for 1 year</li>
+                                <li class="text-light-custom">✓ Multiple training scenarios</li>
+                                <li class="text-light-custom">✓ Real-time conversation coaching</li>
+                                <li class="text-light-custom">✓ Opportunity recognition training</li>
+                                <li class="text-light-custom">✓ Context-aware response suggestions</li>
+                                <li class="text-light-custom">✓ Progress tracking & brain training stats</li>
+                                <li class="text-light-custom">✓ Graceful rejection handling</li>
+                                <li class="text-light-custom">✓ Send 500 messages, valid for 1 year</li>
                             </ul>
                             <a href="#waitlist" class="btn-custom-primary">Join the Waitlist</a>
                         </div>
@@ -908,10 +1186,10 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-5" style="background-color: var(--dark-bg);">
+    <section class="py-5 bg-dark-custom">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold" style="color: var(--text-light);">Frequently Asked Questions</h2>
+                <h2 class="display-5 fw-bold text-light-custom">Frequently Asked Questions</h2>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -944,28 +1222,55 @@
                         <div class="faq-answer">If you havent progressed past the first scenario and you're within 24
                             hours of your purchase, we can offer you a full refund. Contact support.</div>
                     </div>
+                    <div class="mb-3">
+                        <button class="faq-question">Is this teaching manipulation?</button>
+                        <div class="faq-answer">Absolutely not. Charismo AI teaches authentic communication skills and
+                            emotional intelligence, not manipulation tactics. We focus on genuine connection, reading
+                            social cues appropriately, and responding with empathy and respect. The goal is to help you
+                            become your best, most authentic self in conversations - not to deceive or manipulate
+                            others.</div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="faq-question">Does this promote toxic pickup artist behavior?</button>
+                        <div class="faq-answer">Not at all. We specifically avoid pickup artist tactics and focus on
+                            respectful, genuine interaction skills. Our scenarios emphasize reading consent, respecting
+                            boundaries, accepting rejection gracefully, and building real connections based on mutual
+                            interest and respect.</div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="faq-question">Is this just about getting dates?</button>
+                        <div class="faq-answer">While dating scenarios are included, the skills you learn apply to all
+                            social interactions - networking events, workplace conversations, friendships, and family
+                            relationships. You're developing universal communication skills that will serve you
+                            throughout your life, not just in romantic situations.</div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="faq-question">What if women find out I used this?</button>
+                        <div class="faq-answer">There's nothing to hide! Improving your communication skills is like
+                            going to the gym or learning any other skill. Most people appreciate when someone puts
+                            effort into becoming a better conversationalist. You're not using scripts - you're
+                            developing genuine social intelligence and emotional awareness.</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Waitlist Section -->
-    <section id="waitlist" class="py-5"
-        style="background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);">
+    <section id="waitlist" class="py-5 bg-gradient-custom">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8">
-                    <div class="card"
-                        style="background: rgba(33, 38, 45, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(48, 54, 61, 0.5); border-radius: 20px;">
+                    <div class="card waitlist-card">
                         <div class="card-body text-center p-5">
-                            <h3 class="h3 fw-bold mb-3" style="color: var(--text-light);">🎯 Ready to Never Be
+                            <h3 class="h3 fw-bold mb-3 text-light-custom">🎯 Ready to Never Be
                                 Speechless Again?</h3>
-                            <p class="lead mb-4" style="color: var(--text-muted);">Join our exclusive waitlist and be
+                            <p class="lead mb-4 text-muted-custom">Join our exclusive waitlist and be
                                 the first to transform your conversation skills with Charismo AI brain training.</p>
 
 
-                            <a href="https://forms.gle/Zio6JQtF8wpdnfHq5" class="btn-custom-primary btn-lg mb-3"
-                                style="display: flex; align-items: center; justify-content: center; margin: 0 auto; min-width: 280px;">
+                            <a href="https://forms.gle/Zio6JQtF8wpdnfHq5"
+                                class="btn-custom-primary btn-lg mb-3 btn-waitlist">
                                 <svg style="width: 24px; height: 24px; margin-right: 12px;" viewBox="0 0 24 24">
                                     <path fill="currentColor"
                                         d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -979,7 +1284,7 @@
                                 Join Waitlist with Google
                             </a>
 
-                            <div style="color: var(--text-muted); font-size: 0.9rem; opacity: 0.8;">
+                            <div class="security-note">
                                 🔒 Secure sign-up • No spam
                             </div>
                         </div>
@@ -1055,6 +1360,19 @@
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'all 0.6s ease';
             observer.observe(el);
+        });
+
+        // Chat option buttons radio functionality
+        document.querySelectorAll('.chat-option-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                // Remove selected class from all buttons
+                document.querySelectorAll('.chat-option-btn').forEach(btn => {
+                    btn.classList.remove('selected');
+                });
+
+                // Add selected class to clicked button
+                this.classList.add('selected');
+            });
         });
     </script>
 </body>
