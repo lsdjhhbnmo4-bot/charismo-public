@@ -522,6 +522,17 @@
             color: var(--text-light);
         }
 
+        .nav-link-custom {
+            color: var(--text-muted);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .nav-link-custom:hover {
+            color: var(--text-light);
+        }
+
         .btn-nav-custom {
             padding: 12px 24px;
             font-size: 1rem;
@@ -626,10 +637,20 @@
             <a class="navbar-brand fw-bold navbar-brand-custom" href="#">
                 Charismo AI
             </a>
-            <div class="navbar-nav ms-auto">
-                <a href="https://app.charismoai.com" class="btn-custom-primary btn-nav-custom">
-                    Open App
-                </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <div class="navbar-nav ms-auto align-items-lg-center">
+                    <a class="nav-link nav-link-custom" href="#features">Features</a>
+                    <a class="nav-link nav-link-custom" href="#demo">Demo</a>
+                    <a class="nav-link nav-link-custom" href="#pricing">Pricing</a>
+                    <a class="nav-link nav-link-custom" href="#faq">FAQ</a>
+                    <a href="https://app.charismoai.com" class="btn-custom-primary btn-nav-custom">
+                        Open App
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -1197,7 +1218,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section class="py-5 bg-dark-custom">
+    <section id="faq" class="py-5 bg-dark-custom">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="display-5 fw-bold text-light-custom">Frequently Asked Questions</h2>
@@ -1339,13 +1360,41 @@
 
     <!-- Custom JS -->
     <script>
-        // Smooth scrolling for anchor links
+        // Smooth scrolling for anchor links with fixed navbar offset
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const targetSelector = this.getAttribute('href');
+                if (!targetSelector || targetSelector === '#') {
+                    return;
+                }
+
+                const targetElement = document.querySelector(targetSelector);
+                if (!targetElement) {
+                    return;
+                }
+
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
+
+                const navbar = document.querySelector('.navbar-custom');
+                const navHeight = navbar ? navbar.offsetHeight : 0;
+                const targetTop = targetElement.getBoundingClientRect().top + window.scrollY - navHeight - 8;
+
+                window.scrollTo({
+                    top: targetTop,
                     behavior: 'smooth'
                 });
+
+                if (history.pushState) {
+                    history.pushState(null, '', targetSelector);
+                } else {
+                    location.hash = targetSelector;
+                }
+
+                const navbarCollapse = document.querySelector('.navbar-collapse.show');
+                if (navbarCollapse) {
+                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                    bsCollapse.hide();
+                }
             });
         });
 
