@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master the Art of the Approach | Charismo AI</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0E37KGTZE9"></script>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-0E37KGTZE9');
+    </script>
+
+    <style>
+        /* Page-specific overrides */
+        .approach-hero {
+            background: linear-gradient(rgba(13, 17, 23, 0.75), rgba(13, 17, 23, 0.85)),
+                url('https://lsdjhhbnmo4-bot.github.io/charismo-public/9fc2c84b-3337-4b4d-af04-efb65f5e03c5.png');
+            background-size: cover;
+            background-position: center top;
+            background-attachment: fixed;
+            color: var(--text-light);
+            padding: 160px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .approach-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(88, 166, 255, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .approach-hero .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .approach-header {
+            background-color: var(--darker-bg);
+            border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+            backdrop-filter: blur(10px);
+            padding: 16px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .the-moment-section {
+            background: var(--darker-bg);
+            color: var(--text-light);
+            padding: 80px 0;
+        }
+
+        .moment-text {
+            font-size: 1.35rem;
+            line-height: 1.8;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .moment-text .pause {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .outcome-card {
+            background: rgba(13, 17, 23, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(48, 54, 61, 0.5);
+            border-radius: 16px;
+            padding: 36px 28px;
+            text-align: center;
+            height: 100%;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .outcome-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .outcome-icon {
+            font-size: 2.8rem;
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        .credibility-strip {
+            background: rgba(88, 166, 255, 0.06);
+            border-top: 1px solid rgba(88, 166, 255, 0.15);
+            border-bottom: 1px solid rgba(88, 166, 255, 0.15);
+            padding: 48px 0;
+        }
+
+        .credibility-item {
+            text-align: center;
+            padding: 16px;
+        }
+
+        .credibility-number {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: block;
+            letter-spacing: -0.03em;
+            margin-bottom: 6px;
+        }
+
+        .credibility-label {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .approach-footer {
+            background: var(--darker-bg);
+            color: var(--text-muted);
+            padding: 28px 0;
+            border-top: 1px solid rgba(48, 54, 61, 0.4);
+        }
+
+        .approach-footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .approach-footer a:hover {
+            color: var(--text-light);
+        }
+
+        .divider {
+            color: rgba(48, 54, 61, 0.8);
+            margin: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .approach-hero {
+                padding: 130px 0 80px;
+                background-attachment: scroll;
+            }
+
+            .moment-text {
+                font-size: 1.15rem;
+            }
+
+            .credibility-item {
+                margin-bottom: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Minimal Header -->
+    <header class="approach-header">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="index.html" class="navbar-brand-custom fw-bold text-decoration-none"
+                style="font-size: 1.4rem; letter-spacing: -0.03em; color: var(--text-light);">
+                Charismo AI
+            </a>
+            <a href="https://app.charismoai.com" class="btn-custom-primary btn-nav-custom">
+                Start free →
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="approach-hero">
+        <div class="container">
+            <div class="hero-content text-center">
+                <div class="mb-4" style="display: inline-block; background: rgba(88,166,255,0.1); border: 1px solid rgba(88,166,255,0.3); border-radius: 50px; padding: 8px 20px; font-size: 0.9rem; color: var(--accent-color); font-weight: 600; letter-spacing: 0.3px;">
+                    Approach Training
+                </div>
+                <h1 class="display-4 fw-bold mb-4 text-balance">
+                    Master the Art of the Approach with AI-Powered Practice
+                </h1>
+                <p class="lead mb-5 mx-auto text-balance" style="max-width: 560px; color: var(--text-muted);">
+                    Run through real approach scenarios. Get instant coaching on what you said, why it landed or didn't, and exactly how to improve before the next real moment.
+                </p>
+                <a href="https://app.charismoai.com" class="btn-custom-primary" style="font-size: 1.1rem;">
+                    Practice free — 10 credits included
+                </a>
+                <p class="mt-3" style="color: var(--text-muted); font-size: 0.85rem;">No card required &nbsp;·&nbsp; Sign in with Google &nbsp;·&nbsp; Start in under a minute</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- "The Moment" Hook Section -->
+    <section class="the-moment-section">
+        <div class="container">
+            <div class="text-center">
+                <p class="moment-text">
+                    You see her across the room. She's right there. The window is open — the timing feels right, the
+                    environment is good, and something tells you to just go.<br><br>
+                    And then… <span class="pause">nothing.</span><br><br>
+                    The moment passes. You replay what you could have said on the walk home. Sound familiar?
+                    <br><br>
+                    That gap between <em>knowing you should</em> and <em>actually going</em> is a trained skill — not a
+                    personality trait. Charismo builds it through deliberate, pressure-free repetition so your brain has
+                    the wiring it needs when the real moment arrives.
+                </p>
+                <div class="mt-5">
+                    <a href="https://app.charismoai.com" class="btn-custom-primary">
+                        Start training free →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="frustration-section py-5">
+        <div class="container">
+            <div class="frustration-content text-center">
+                <h2 class="display-5 fw-bold mb-2">Which of these is you?</h2>
+                <p class="lead mb-5 opacity-75">Every guy who's ever approached has hit at least one of these walls...</p>
+
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="frustration-item h-100">
+                            <span class="frustration-emoji">😶</span>
+                            <div class="frustration-text">"My mind went blank"</div>
+                            <div class="frustration-subtext">You had a split second and your brain served up nothing. Repetition trains it to produce something usable, fast.</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="frustration-item h-100">
+                            <span class="frustration-emoji">⏱️</span>
+                            <div class="frustration-text">"I overthought it and missed the window"</div>
+                            <div class="frustration-subtext">You were still writing the perfect opener in your head when the moment closed. Training shortens that gap.</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="frustration-item h-100">
+                            <span class="frustration-emoji">💬</span>
+                            <div class="frustration-text">"My opener landed flat and I couldn't recover"</div>
+                            <div class="frustration-subtext">One weak line doesn't have to kill it. You can learn to pivot, reframe, and keep things alive.</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="frustration-item h-100">
+                            <span class="frustration-emoji">🔍</span>
+                            <div class="frustration-text">"I couldn't read if she was open"</div>
+                            <div class="frustration-subtext">Reading the room is a learnable skill. Practice enough real scenarios and the signals start becoming obvious.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Train Section -->
+    <section class="py-5 bg-dark-custom">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-light-custom">What approach training builds</h2>
+                <p class="lead text-muted-custom mx-auto" style="max-width: 520px;">Three skills that make the difference between watching the moment pass and being in it.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="outcome-card">
+                        <span class="outcome-icon">⚡</span>
+                        <h3 class="h5 fw-bold text-light-custom mb-3">Open with confidence</h3>
+                        <p class="text-muted-custom" style="font-size: 0.95rem; line-height: 1.6;">
+                            Stop second-guessing the first line. Train until your brain produces a usable, natural opener before the window closes — in a bar, on the street, anywhere.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="outcome-card">
+                        <span class="outcome-icon">🎯</span>
+                        <h3 class="h5 fw-bold text-light-custom mb-3">Read the room in seconds</h3>
+                        <p class="text-muted-custom" style="font-size: 0.95rem; line-height: 1.6;">
+                            Learn to pick up on body language, energy, and environment cues so you approach at the right moment with the right tone — and stop wasting effort on closed signals.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="outcome-card">
+                        <span class="outcome-icon">🔄</span>
+                        <h3 class="h5 fw-bold text-light-custom mb-3">Recover when it goes sideways</h3>
+                        <p class="text-muted-custom" style="font-size: 0.95rem; line-height: 1.6;">
+                            A flat opener or an awkward pause doesn't have to end it. Practice the pivots that reset the energy and keep the conversation alive.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credibility Strip -->
+    <section class="credibility-strip">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="credibility-item">
+                        <span class="credibility-number">30+</span>
+                        <span class="credibility-label">Real-world approach<br>scenarios to train on</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="credibility-item">
+                        <span class="credibility-number">Instant</span>
+                        <span class="credibility-label">Coaching feedback after<br>every single reply</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="credibility-item">
+                        <span class="credibility-number">100%</span>
+                        <span class="credibility-label">Private — practice without<br>judgment or embarrassment</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="credibility-item">
+                        <span class="credibility-number">10</span>
+                        <span class="credibility-label">Free credits to start<br>right now, no card needed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Everything you need to stop freezing and start approaching</h2>
+                <p class="lead text-muted-custom mt-3">One-time payment. No subscription. Practice whenever you want for 6 months.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-7">
+                    <div class="card pricing-card">
+                        <div class="card-body text-center p-5">
+                            <div class="price pricing-price-custom text-primary">$39</div>
+                            <div class="mb-3 pricing-subtitle-custom">one-time &nbsp;·&nbsp; 300 credits &nbsp;·&nbsp; valid 6 months</div>
+                            <ul class="price-features mb-4 text-start">
+                                <li class="text-light-custom">✓ 300 AI messages for practice and coaching</li>
+                                <li class="text-light-custom">✓ 30+ real-world approach scenarios</li>
+                                <li class="text-light-custom">✓ Instant AI feedback on every reply</li>
+                                <li class="text-light-custom">✓ Context-aware coaching — reads the scenario, not just your words</li>
+                                <li class="text-light-custom">✓ Recovery and pivot training when openers go flat</li>
+                                <li class="text-light-custom">✓ Progress tracking and score history</li>
+                                <li class="text-light-custom">✓ Private — no one else sees your sessions</li>
+                            </ul>
+                            <a href="https://app.charismoai.com" class="btn-custom-primary" style="font-size: 1rem; padding: 16px 36px;">
+                                Start with 10 free credits
+                            </a>
+                            <p class="mt-3 mb-0" style="color: var(--text-muted); font-size: 0.85rem;">No credit card required to start</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-dark-custom">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold text-light-custom">Common questions</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="mb-3">
+                        <button class="faq-question">How quickly will I notice a difference in real approaches?</button>
+                        <div class="faq-answer">Results vary but most people start noticing faster thinking and less hesitation within a few weeks of regular practice. The more scenarios you run, the more your brain builds automatic responses for high-pressure moments.</div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="faq-question">Will this work if I'm naturally introverted?</button>
+                        <div class="faq-answer">Absolutely. Introverts are often naturally thoughtful — the training helps you access that thoughtfulness faster, in the moment, so it stops feeling like a weakness. You're not changing who you are, you're building a specific skill.</div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="faq-question">Is this teaching pickup artist tactics?</button>
+                        <div class="faq-answer">No. Charismo is about genuine, authentic conversation skills. The scenarios focus on reading the situation, being direct without being creepy, and building real connection. There are no manipulation scripts, negging techniques, or any of that. If an approach is disrespectful, the coach will tell you.</div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="faq-question">What counts as an "approach" scenario?</button>
+                        <div class="faq-answer">Scenarios cover the kinds of real-world situations where you'd actually meet someone — bars, coffee shops, daytime street approaches, social events, and more. Each one has context: the environment, her mood, the energy of the moment. You practice opening, reading her response, and keeping things moving naturally.</div>
+                    </div>
+                    <div class="mb-3">
+                        <button class="faq-question">What is your refund policy?</button>
+                        <div class="faq-answer">If you haven't used any of your new credits and you're within 24 hours of purchase, we can offer a full refund. Contact support.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-5 bg-gradient-custom">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="card signup-card">
+                        <div class="card-body text-center p-5">
+                            <h3 class="h3 fw-bold mb-3 text-light-custom">Stop rehearsing in your head. Practice for real.</h3>
+                            <p class="lead mb-4 text-muted-custom text-balance">Create your account and get 10 free credits to start approach training right now.</p>
+                            <a href="https://app.charismoai.com" class="btn-custom-primary btn-lg mb-3 btn-signup">
+                                <svg style="width: 22px; height: 22px; margin-right: 12px;" viewBox="0 0 24 24">
+                                    <path fill="currentColor"
+                                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                                    <path fill="currentColor"
+                                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                                    <path fill="currentColor"
+                                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                                    <path fill="currentColor"
+                                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                                </svg>
+                                Sign in with Google — it's free
+                            </a>
+                            <div class="security-note">
+                                🔒 Secure sign-in &nbsp;·&nbsp; 10 free credits included &nbsp;·&nbsp; No card needed
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col text-center">
+                    <p class="text-secondary text-balance" style="font-size: 0.9rem;">
+                        Charismo AI helps men build real conversation confidence — not scripts, not manipulation, just the ability to think faster and respond better in the moment.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="approach-footer">
+        <div class="container">
+            <div class="text-center d-flex flex-column flex-md-row align-items-center justify-content-center gap-3">
+                <span>&copy; 2026 Charismo AI</span>
+                <span class="divider d-none d-md-inline">|</span>
+                <a href="https://app.charismoai.com/privacy">Privacy Policy</a>
+                <span class="divider d-none d-md-inline">|</span>
+                <a href="https://app.charismoai.com/terms">Terms of Service</a>
+                <span class="divider d-none d-md-inline">|</span>
+                <a href="https://app.charismoai.com/cookies">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // FAQ toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function () {
+                const answer = this.nextElementSibling;
+                const isOpen = answer.style.display === 'block';
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.style.display = 'none';
+                });
+                if (!isOpen) {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+
+        // Scroll animation
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.outcome-card, .frustration-item, .card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+
+    <!-- Cookie banner -->
+    <script type="text/javascript"
+        src="//www.privacypolicies.com/public/cookie-consent/3.0.0/cookie-consent.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            cookieconsent.run({ "notice_banner_type": "simple", "consent_type": "express", "palette": "light", "language": "en", "website_name": "Charismo AI", "change_preferences_selector": "changeCookiePrefs", "cookies_policy_url": "https://CharismoAI.com/cookies" });
+        });
+    </script>
+    <noscript>Cookie Consent by <a href="https://www.PrivacyPolicies.com/cookie-consent/"
+            rel="nofollow">PrivacyPolicies.com</a></noscript>
+
+</body>
+
+</html>
