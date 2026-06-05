@@ -1,0 +1,616 @@
+ :root {
+     --dark-bg: #1a1a1a;
+     --darker-bg: #0d1117;
+     --card-bg: rgba(33, 38, 45, 0.7);
+     --accent-color: #58a6ff;
+     --text-light: #f0f6fc;
+     --text-muted: #8b949e;
+     --border-color: rgba(48, 54, 61, 0.5);
+ }
+
+ body {
+     font-family: 'Inter', Helvetica, Arial, sans-serif;
+     background-color: var(--dark-bg);
+     color: var(--text-light);
+ }
+
+ h1,
+ h2,
+ h3,
+ h4,
+ .pricing-price-custom {
+     letter-spacing: -0.02em;
+ }
+
+ .hero-section {
+     background: linear-gradient(rgba(13, 17, 23, 0.8), rgba(13, 17, 23, 0.7)), url('https://lsdjhhbnmo4-bot.github.io/charismo-public/date.jpg');
+     background-size: cover;
+     background-position: center;
+     background-attachment: fixed;
+     color: var(--text-light);
+     padding: 100px 0;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .hero-section::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: linear-gradient(135deg, rgba(88, 166, 255, 0.1) 0%, rgba(88, 166, 255, 0.05) 100%);
+     pointer-events: none;
+ }
+
+ .hero-content {
+     position: relative;
+     z-index: 1;
+ }
+
+ .btn-custom-primary {
+     background: var(--accent-color);
+     border: none;
+     color: white;
+     padding: 18px 40px;
+     border-radius: 50px;
+     font-size: 1.2rem;
+     font-weight: 600;
+     transition: all 0.3s ease;
+     text-decoration: none;
+     display: inline-block;
+     margin: 10px;
+ }
+
+ .btn-custom-primary:hover {
+     background: #1f6feb;
+     transform: translateY(-2px);
+     color: white;
+ }
+
+ .btn-custom-secondary {
+     background: transparent;
+     border: 2px solid var(--accent-color);
+     color: var(--accent-color);
+     padding: 18px 40px;
+     border-radius: 50px;
+     font-size: 1.2rem;
+     font-weight: 600;
+     transition: all 0.3s ease;
+     text-decoration: none;
+     display: inline-block;
+     margin: 10px;
+ }
+
+ .btn-custom-secondary:hover {
+     background: var(--accent-color);
+     color: white;
+ }
+
+ .stat-number {
+     font-size: 3rem;
+     font-weight: 700;
+     color: var(--accent-color);
+     margin-bottom: 10px;
+ }
+
+ .feature-card {
+     transition: transform 0.3s ease;
+     height: 100%;
+ }
+
+ .feature-card:hover {
+     transform: translateY(-5px);
+ }
+
+ .feature-icon {
+     font-size: 3rem;
+     margin-bottom: 20px;
+ }
+
+ .chat-container {
+     max-width: 800px;
+     margin: 0 auto;
+     background: rgba(33, 38, 45, 0.8);
+     backdrop-filter: blur(10px);
+     border-radius: 15px;
+     padding: 30px;
+     border: 1px solid rgba(48, 54, 61, 0.5);
+ }
+
+ .chat-message {
+     margin-bottom: 25px;
+     position: relative;
+     animation: slideIn 0.5s ease;
+ }
+
+ .user-message {
+     display: flex;
+     justify-content: flex-end;
+ }
+
+ .user-bubble {
+     background: rgba(13, 17, 23, 0.8);
+     color: var(--text-light);
+     padding: 15px 20px;
+     border-radius: 18px 18px 5px 18px;
+     max-width: 70%;
+     border: 1px solid rgba(48, 54, 61, 0.5);
+ }
+
+ .ai-message {
+     width: 100%;
+     color: var(--text-light);
+ }
+
+ .ai-response-message {
+     display: flex;
+     justify-content: flex-start;
+     margin-bottom: 25px;
+ }
+
+ .message-label {
+     font-size: 0.8rem;
+     font-weight: 600;
+     margin-bottom: 8px;
+     opacity: 0.8;
+     color: var(--accent-color);
+ }
+
+ .ai-response-section {
+     margin-bottom: 20px;
+ }
+
+ .simulated-response {
+     background: rgba(45, 55, 65, 0.9);
+     border: 1px solid rgba(75, 85, 95, 0.4);
+     padding: 15px 20px;
+     border-radius: 5px 18px 18px 18px;
+     margin-bottom: 15px;
+     color: var(--text-light);
+     max-width: 70%;
+ }
+
+ .simulated-response .section-title {
+     color: var(--accent-color);
+     font-weight: 600;
+     font-size: 0.9rem;
+     margin-bottom: 8px;
+     text-transform: uppercase;
+     letter-spacing: 0.5px;
+ }
+
+ .analysis-section {
+     background: rgba(33, 38, 45, 0.6);
+     border: 1px solid rgba(48, 54, 61, 0.5);
+     border-radius: 8px;
+     padding: 15px 20px;
+     margin-bottom: 15px;
+ }
+
+ .analysis-section .section-title {
+     color: #ffa500;
+     font-weight: 600;
+     font-size: 0.9rem;
+     margin-bottom: 10px;
+     text-transform: uppercase;
+     letter-spacing: 0.5px;
+ }
+
+ .score-badge {
+     display: inline-block;
+     background: var(--accent-color);
+     color: white;
+     padding: 4px 12px;
+     border-radius: 12px;
+     font-size: 0.8rem;
+     font-weight: 600;
+     margin: 8px 0;
+ }
+
+ .improvement-section {
+     background: rgba(255, 165, 0, 0.1);
+     border-left: 4px solid #ffa500;
+     padding: 15px 20px;
+     border-radius: 0 8px 8px 0;
+ }
+
+ .improvement-section .section-title {
+     color: #ffa500;
+     font-weight: 600;
+     font-size: 0.9rem;
+     margin-bottom: 10px;
+     text-transform: uppercase;
+     letter-spacing: 0.5px;
+ }
+
+ .success-section {
+     background: rgba(34, 197, 94, 0.1);
+     border-left: 4px solid #22c55e;
+     padding: 15px 20px;
+     border-radius: 0 8px 8px 0;
+ }
+
+ .success-section .section-title {
+     color: #22c55e;
+     font-weight: 600;
+     font-size: 0.9rem;
+     margin-bottom: 10px;
+     text-transform: uppercase;
+     letter-spacing: 0.5px;
+ }
+
+ .success-list {
+     list-style: none;
+     padding: 0;
+     margin: 8px 0;
+ }
+
+ .success-list li {
+     padding: 3px 0;
+     position: relative;
+     padding-left: 15px;
+ }
+
+ .success-list li:before {
+     content: '•';
+     color: #22c55e;
+     position: absolute;
+     left: 0;
+ }
+
+ @keyframes slideIn {
+     from {
+         opacity: 0;
+         transform: translateY(10px);
+     }
+
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+
+ .pricing-section {
+     background: var(--darker-bg);
+     color: var(--text-light);
+ }
+
+ .pricing-card {
+     background: rgba(33, 38, 45, 0.7);
+     backdrop-filter: blur(10px);
+     border-radius: 20px;
+     border: 1px solid rgba(48, 54, 61, 0.5);
+ }
+
+ .price {
+     font-size: 3rem;
+     font-weight: 700;
+     margin-bottom: 10px;
+ }
+
+ .price-features {
+     list-style: none;
+     padding: 0;
+ }
+
+ .price-features li {
+     padding: 10px 0;
+     border-bottom: 1px solid #30363d;
+ }
+
+ .faq-question {
+     background: var(--card-bg);
+     color: var(--text-light);
+     padding: 20px;
+     cursor: pointer;
+     font-weight: 600;
+     font-size: 1.1rem;
+     border: 1px solid var(--border-color);
+     width: 100%;
+     text-align: left;
+     border-radius: 10px 10px 0 0;
+ }
+
+ .faq-answer {
+     padding: 20px;
+     color: var(--text-muted);
+     line-height: 1.6;
+     display: none;
+     background: var(--card-bg);
+     border: 1px solid var(--border-color);
+     border-top: none;
+     border-radius: 0 0 10px 10px;
+ }
+
+ .footer-section {
+     background: var(--darker-bg);
+     color: var(--text-light);
+ }
+
+ .frustration-section {
+     background: var(--card-bg);
+     color: var(--text-light);
+     position: relative;
+ }
+
+ .frustration-section::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: rgba(0, 0, 0, 0.1);
+ }
+
+ .frustration-content {
+     position: relative;
+     z-index: 1;
+ }
+
+ .frustration-item {
+     background: rgba(13, 17, 23, 0.6);
+     backdrop-filter: blur(10px);
+     border-radius: 15px;
+     border: 1px solid rgba(48, 54, 61, 0.5);
+     padding: 30px;
+     text-align: center;
+     transition: transform 0.3s ease;
+ }
+
+ .frustration-item:hover {
+     transform: translateY(-5px);
+     border-color: var(--accent-color);
+ }
+
+ .frustration-emoji {
+     font-size: 2.5rem;
+     margin-bottom: 15px;
+     display: block;
+ }
+
+ .frustration-text {
+     font-size: 1.1rem;
+     font-weight: 500;
+     margin-bottom: 10px;
+ }
+
+ .frustration-subtext {
+     font-size: 0.9rem;
+     opacity: 0.8;
+ }
+
+ .text-balance {
+     text-wrap: balance;
+ }
+
+ .chat-input-container {
+     margin-top: 25px;
+     padding-top: 20px;
+     border-top: 1px solid rgba(48, 54, 61, 0.3);
+ }
+
+ .chat-input {
+     width: 100%;
+     padding: 15px 20px;
+     background: rgba(45, 55, 65, 0.8);
+     border: 1px solid rgba(75, 85, 95, 0.4);
+     border-radius: 25px;
+     color: var(--text-light);
+     font-size: 1rem;
+     outline: none;
+     transition: all 0.3s ease;
+ }
+
+ .chat-input::placeholder {
+     color: var(--text-muted);
+     opacity: 0.7;
+ }
+
+ .chat-input:focus {
+     border-color: var(--accent-color);
+     box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+ }
+
+ .chat-options {
+     display: flex;
+     gap: 10px;
+     margin-bottom: 15px;
+     flex-wrap: wrap;
+ }
+
+ .chat-option-btn {
+     background: rgba(13, 17, 23, 0.9);
+     color: var(--text-light);
+     border: 1px solid rgba(75, 85, 95, 0.4);
+     padding: 8px 16px;
+     border-radius: 20px;
+     font-size: 0.9rem;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     white-space: nowrap;
+ }
+
+ .chat-option-btn:hover {
+     background: rgba(33, 38, 45, 0.9);
+     border-color: var(--accent-color);
+     color: var(--text-light);
+ }
+
+ .chat-option-btn.selected {
+     background: var(--accent-color);
+     border-color: var(--accent-color);
+     color: white;
+ }
+
+ .chat-input-wrapper {
+     position: relative;
+     display: flex;
+     align-items: center;
+ }
+
+ .chat-input-with-help {
+     width: 100%;
+     padding: 15px 80px 15px 20px;
+     background: rgba(45, 55, 65, 0.8);
+     border: 1px solid rgba(75, 85, 95, 0.4);
+     border-radius: 25px;
+     color: var(--text-light);
+     font-size: 1rem;
+     outline: none;
+     transition: all 0.3s ease;
+ }
+
+ .chat-input-with-help::placeholder {
+     color: var(--text-muted);
+     opacity: 0.7;
+ }
+
+ .chat-input-with-help:focus {
+     border-color: var(--accent-color);
+     box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+ }
+
+ .help-button {
+     position: absolute;
+     right: 8px;
+     background: rgba(13, 17, 23, 0.9);
+     color: var(--text-muted);
+     border: 1px solid rgba(75, 85, 95, 0.4);
+     padding: 8px 14px;
+     border-radius: 15px;
+     font-size: 0.8rem;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+
+ .help-button:hover {
+     background: var(--accent-color);
+     color: white;
+     border-color: var(--accent-color);
+ }
+
+ /* Custom utility classes */
+ .navbar-custom {
+     background-color: var(--darker-bg);
+     border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+     backdrop-filter: blur(10px);
+ }
+
+ .navbar-brand-custom {
+     color: var(--text-light);
+     font-size: 1.5rem;
+     letter-spacing: -0.03em;
+ }
+
+ .navbar-brand-custom:hover {
+     color: var(--text-light);
+ }
+
+ .nav-link-custom {
+     color: var(--text-muted);
+     font-weight: 500;
+     transition: color 0.3s ease;
+     margin: 0 10px;
+ }
+
+ .nav-link-custom:hover {
+     color: var(--text-light);
+ }
+
+ .btn-nav-custom {
+     padding: 12px 24px;
+     font-size: 1rem;
+     margin: 0;
+ }
+
+ .hero-padding {
+     padding-top: 150px;
+ }
+
+ .max-width-600 {
+     max-width: 600px;
+ }
+
+ .bg-dark-custom {
+     background-color: var(--dark-bg);
+ }
+
+ .bg-card-custom {
+     background-color: var(--card-bg);
+ }
+
+ .text-light-custom {
+     color: var(--text-light);
+ }
+
+ .text-muted-custom {
+     color: var(--text-muted);
+ }
+
+ .feature-card-custom {
+     background: rgba(13, 17, 23, 0.6);
+     backdrop-filter: blur(10px);
+     border: 1px solid rgba(48, 54, 61, 0.5) !important;
+ }
+
+ .scenario-image {
+     max-height: 300px;
+     object-fit: cover;
+     width: 100%;
+     border: 2px solid rgba(88, 166, 255, 0.2);
+ }
+
+ .analysis-container {
+     max-width: 100%;
+     margin: 20px 0;
+ }
+
+ .line-height-1-6 {
+     line-height: 1.6;
+ }
+
+ .pricing-price-custom {
+     color: var(--text-light);
+ }
+
+ .pricing-subtitle-custom {
+     color: var(--text-muted);
+ }
+
+ .pricing-highlight {
+     color: var(--accent-color);
+     font-size: 1.1rem;
+     font-weight: 600;
+ }
+
+ .bg-gradient-custom {
+     background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+ }
+
+ .signup-card {
+     background: rgba(33, 38, 45, 0.8);
+     backdrop-filter: blur(10px);
+     border: 1px solid rgba(48, 54, 61, 0.5);
+     border-radius: 20px;
+ }
+
+ .btn-signup {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0 auto;
+     min-width: 280px;
+ }
+
+ .security-note {
+     color: var(--text-muted);
+     font-size: 0.9rem;
+     opacity: 0.8;
+ }
+
+ .text-accent-custom {
+     color: var(--accent-color);
+ }
